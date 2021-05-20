@@ -11,18 +11,18 @@ public class Contato {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition ="ID")
+    @Column(name ="ID")
     private Long id;
 
-    @Column(columnDefinition = "TELEFONE")
+    @Column(name = "TELEFONE")
     private String telefone;
 
-    @Column(columnDefinition = "TIPO")
+    @Column(name = "TIPO")
     private String tipo;
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(columnDefinition = "IDCLIENTE")
+    @JoinColumn(name = "IDCLIENTE")
     private Cliente cliente;
 
 //    Metodos de acessos Getters & Setters ********************************

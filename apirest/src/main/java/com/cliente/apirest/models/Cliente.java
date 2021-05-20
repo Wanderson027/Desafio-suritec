@@ -3,6 +3,7 @@ package com.cliente.apirest.models;
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.List;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="CLIENTE")
@@ -11,37 +12,36 @@ public class Cliente implements Serializable {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    @JoinColumn(columnDefinition = "id")
+    @JoinColumn(name = "id")
     private Long id;
 
-//    @Size(min = 3, max = 100)
-
-    @Column(columnDefinition = "NOME")
+    @Size(min = 3, max = 100)
+    @Column(name = "NOME")
     private String nome;
 
-    @Column(columnDefinition ="CPF")
+    @Column(name="CPF")
     private String CPF;
 
-    @Column(columnDefinition ="CEP")
+    @Column(name="CEP")
     private String cep;
 
-    @Column(columnDefinition ="LOGRADOURO")
+    @Column(name ="LOGRADOURO")
     private String logradouro;
 
-    @Column(columnDefinition ="BAIRRO")
+    @Column(name ="BAIRRO")
     private String bairro;
 
-    @Column(columnDefinition ="CIDADE")
+    @Column(name ="CIDADE")
     private String cidade;
 
-    @Column(columnDefinition ="UF")
+    @Column(name ="UF")
     private String uf;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @Column(columnDefinition ="CODCONTATO")
+    @Column(name ="CODCONTATO")
     private List<Contato> telefones;
 
-    @Column(columnDefinition ="CODEMAIL")
+    @Column(name ="CODEMAIL")
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Email> emails;
 

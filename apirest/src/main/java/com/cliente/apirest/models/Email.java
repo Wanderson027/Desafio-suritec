@@ -11,15 +11,15 @@ public class Email {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(columnDefinition ="ID")
+    @Column(name ="ID")
     private Long id;
 
-    @Column(columnDefinition ="EMAIL")
+    @Column(name ="EMAIL")
     private String email;
 
     @ManyToOne
     @JsonIgnore
-    @JoinColumn(columnDefinition ="CLIENTE")
+    @JoinColumn(name ="CLIENTE")
     private Cliente cliente;
 
 
